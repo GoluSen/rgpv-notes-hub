@@ -9,6 +9,9 @@ const documentRoutes = require("./routes/documentRoutes");
 
 const app = express();
 
+// Render runs the app behind a proxy, so trust the first proxy
+app.set("trust proxy", 1);
+
 // Security + parsing
 app.use(helmet());
 app.use(
